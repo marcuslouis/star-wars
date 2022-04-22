@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Card } from "./card";
+import { Card } from "../component/Card.jsx";
 import "../../styles/home.css";
 
 export const Home = () => {

@@ -1,15 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+import ScrollToTop from "./component/ScrollToTop.jsx";
 
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Star } from "./views/star";
+import { Home } from "./views/Home.jsx";
+import { Star } from "./views/Star.jsx";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
-import { Card } from "./views/card";
+import { Navbar } from "./component/Navbar.jsx";
+import { Footer } from "./component/Footer.jsx";
+
 
 //create your first component
 const Layout = () => {
@@ -25,9 +24,6 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
-						</Route>
-						<Route exact path="/demo">
-							<Demo />
 						</Route>
 						<Route exact path="/details/:theid">
 							<Star />

@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 export const Card = () => {
     const {store, actions} = useContext(Context)
+    console.log(store)
   
     return(
         <>
@@ -17,8 +18,25 @@ export const Card = () => {
   <div className="card-body">
     <h5 className="card-title">{element.name}</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <Link to={"/details/"+ element.uid} className="btn btn-primary">Go somewhere</Link>
-    <button type="button" className="btn btn-outline-warning">♥</button>
+    <Link to={"/details/" + element.uid}>
+                  <button
+                    onClick={() => {
+                      actions.data(element.uid);
+                    }}
+                    className="btn btn-primary"
+                  >
+                    Learn More
+                  </button>
+                </Link>
+    <button onClick={() => {
+     { if(store.list.includes(element)){
+        alert('you already added this character')
+      } 
+      else{
+        actions.favorite(element)
+
+         }
+    }}} type="button" className="btn btn-outline-warning">♥</button>
   </div>
 </div>
 </div>
