@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { Character } from "../component/Character.jsx";
 import {Context} from "../store/appContext";
+import "../../styles/home.css";
 
 
 export const Star = () => {
@@ -9,7 +10,7 @@ export const Star = () => {
 	return(
 		
 <>
-<div>
+<div className="d-flex justify-content-center">
     <Character />
 </div>
 	</>
